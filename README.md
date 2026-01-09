@@ -1,104 +1,127 @@
-# Schedula – Appointment & Booking Management System
+SCHEDULA – STUDENT HANDOUT & PROJECT GUIDE
 
-Schedula is a full-stack appointment and booking management system built using the MERN stack. It is designed for service-based businesses such as clinics, salons, consultants, and training centers to manage services, schedules, and customer bookings efficiently.
+Course Information  
+Course Code: CS611PE  
+Course Title: Full Stack Development  
+Project Name: Schedula – Salon Appointment & Booking System  
+Project Type: Continuous Semester Project (MERN Stack)  
 
-The application supports role-based access control, slot conflict prevention, booking status workflows, in-app notifications, and calendar-based scheduling, closely resembling real-world production systems.
+---
 
-## Features
-- User authentication and authorization using JWT
-- Role-based access control (Admin and User)
-- Service listing and management
-- Calendar-based appointment booking
-- Slot conflict prevention (no double booking)
-- Booking lifecycle management
-- In-app notification system
-- Admin dashboard for system control
+## 1. Introduction to Schedula
 
-## User Roles
+Schedula is the official course project developed as part of the **Full Stack Development (CS611PE)** course.
 
-### User (Customer)
-- Register and log in
-- Browse available services
-- View available dates and time slots
-- Book appointments
-- View booking history
-- Cancel upcoming bookings
-- Receive booking status notifications
+Instead of building small, isolated applications, students develop **one complete, real-world full-stack application** throughout the semester.
 
-### Admin (Service Provider)
-- Create, update, and delete services
-- Define available slots
-- View all bookings in a calendar view
-- Update booking status (Confirm, Complete, Cancel)
-- Manage users
+Schedula is a **web-based salon appointment and booking platform** where:
 
-## Booking Status Workflow
-- Pending – Booking created, awaiting admin confirmation
-- Confirmed – Booking approved by admin
-- Completed – Service delivered
-- Cancelled – Booking cancelled by user or admin
+- Customers can browse salon services and book appointments online  
+- Users can manage, reschedule, or cancel their bookings  
+- Salon administrators can manage services, time slots, and bookings  
+- Appointment conflicts are automatically prevented  
+- Access is controlled using roles (Admin / User)
 
-## Slot Conflict Prevention
-The system ensures that no two users can book the same service for the same date and time slot. Slot availability is validated at the backend before creating a booking, preventing race conditions and double bookings.
+By the end of the semester, students will have:
 
-## In-App Notifications
-- Booking confirmed
-- Booking cancelled
-- Appointment completed
-Notifications are stored in the database and displayed in a notification center with read and unread states.
+- A complete MERN-stack application  
+- A well-structured GitHub repository  
+- Practical experience in building a real-world scheduling system  
+- Confidence in explaining a full-stack project during evaluations  
 
-## Tech Stack
+---
 
-### Frontend
-- React.js
-- React Router
-- Axios
-- FullCalendar or React Calendar
-- Tailwind CSS or Material UI
+## 2. Technologies Used
 
-### Backend
-- Node.js
-- Express.js
-- RESTful APIs
-- JWT Authentication
-- Role-based middleware
+Through Schedula, students will work with:
 
-### Database
-- MongoDB
-- Mongoose ODM
+- Frontend: React + Material UI / Bootstrap  
+- Backend: Node.js + Express  
+- Database: MongoDB (Cloud – MongoDB Atlas)  
+- Authentication: JWT (JSON Web Tokens)  
+- Version Control: Git & GitHub  
 
-### Security
-- Password hashing using bcrypt
-- JWT-based authentication
-- Protected routes and APIs
+This project reflects **industry-standard full-stack development practices** used in real service-based applications.
 
-## Data Models
+---
 
-### User
-- name
-- email
-- password
-- role (USER or ADMIN)
-- isActive
+## 3. Learning Outcomes
 
-### Service
-- name
-- description
-- duration
-- price
-- isActive
+By completing Schedula, students will be able to:
 
-### Booking
-- user
-- service
-- date
-- timeSlot
-- status (Pending, Confirmed, Completed, Cancelled)
-- createdAt
+- Design and implement RESTful APIs  
+- Build responsive frontend applications using React  
+- Integrate frontend and backend securely  
+- Design MongoDB schemas using Mongoose  
+- Implement authentication and role-based authorization  
+- Handle real-world scheduling and conflict-management logic  
+- Structure and manage a complete full-stack project  
 
-### Notification
-- user
-- message
-- isRead
-- createdAt
+---
 
+## 4. Week-Wise Project Milestones
+
+### Weeks 1–3: Foundation
+• Understanding full-stack architecture  
+• Introduction to MERN stack  
+• Understanding salon booking workflows  
+• Defining project requirements and user roles  
+
+**Deliverable:**  
+System architecture diagram and project requirement analysis  
+
+---
+
+### Weeks 4–6: Backend Development
+• Node.js fundamentals  
+• Express server setup  
+• REST API design and implementation  
+• Service and booking API development  
+
+**Deliverable:**  
+Basic backend APIs for services and bookings  
+
+---
+
+### Weeks 7–9: Database Integration
+• MongoDB concepts  
+• CRUD operations  
+• Mongoose schema design  
+• Connecting backend with MongoDB Atlas  
+
+**Deliverable:**  
+MongoDB collections with full CRUD functionality  
+
+---
+
+### Weeks 10–11: Authentication & Security
+• JWT-based authentication  
+• Role-based access control (Admin / User)  
+• Securing APIs using middleware  
+
+**Deliverable:**  
+Secured login and role-based access flow demonstration  
+
+---
+
+### Weeks 12–14: Frontend Development
+• React components development  
+• Routing and forms  
+• Calendar and booking UI  
+• API integration with backend  
+
+**Deliverable:**  
+Functional frontend screens for user and admin  
+
+---
+
+### Week 15: Final Integration & Demo
+• Full-stack integration  
+• Slot conflict testing  
+• Error handling and debugging  
+• Final testing and optimization  
+
+**Deliverable:**  
+Working full-stack salon booking application demo  
+
+---
