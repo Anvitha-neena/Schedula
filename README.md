@@ -70,6 +70,7 @@ Schedula is a full-stack Salon Appointment Booking & Scheduling Platform built u
 }
 ```
 #### 4.1.2 services
+```json
 {
   "name": "string",
   "description": "string",
@@ -77,8 +78,9 @@ Schedula is a full-stack Salon Appointment Booking & Scheduling Platform built u
   "price": "number",
   "isActive": "boolean"
 }
-
+```
 #### 4.1.3 bookings
+```json
 {
   "user": "ObjectId",
   "service": "ObjectId",
@@ -88,15 +90,16 @@ Schedula is a full-stack Salon Appointment Booking & Scheduling Platform built u
   "status": "Pending | Confirmed | Completed | Cancelled",
   "notes": "string"
 }
-
+```
 #### 4.1.4 notifications
+```json
 {
   "user": "ObjectId",
   "message": "string",
   "type": "booking | system",
   "isRead": "boolean"
 }
-
+```
 ## 5. Backend Design
 #### 5.1 Tech Stack
 Node.js
