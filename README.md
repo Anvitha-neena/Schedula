@@ -1,127 +1,243 @@
-SCHEDULA – STUDENT HANDOUT & PROJECT GUIDE
-
-Course Information  
-Course Code: CS611PE  
-Course Title: Full Stack Development  
-Project Name: Schedula – Salon Appointment & Booking System  
-Project Type: Continuous Semester Project (MERN Stack)  
+# SCHEDULA — Salon Appointment & Scheduling Platform
+### Technical Documentation (MERN Stack)
 
 ---
 
-## 1. Introduction to Schedula
+## 1. Introduction
 
-Schedula is the official course project developed as part of the **Full Stack Development (CS611PE)** course.
+### 1.1 Purpose
+Schedula is a full-stack Salon Appointment Booking & Scheduling Platform built using the MERN stack. It enables users to book salon services online and allows salon administrators to manage services, schedules, time slots, and appointments efficiently.
 
-Instead of building small, isolated applications, students develop **one complete, real-world full-stack application** throughout the semester.
+### 1.2 Target Audience
+- General salon customers
+- Users booking services online
+- Salon administrators/staff
+- Small & medium salon businesses
+- Developers learning real-world scheduling systems
 
-Schedula is a **web-based salon appointment and booking platform** where:
-
-- Customers can browse salon services and book appointments online  
-- Users can manage, reschedule, or cancel their bookings  
-- Salon administrators can manage services, time slots, and bookings  
-- Appointment conflicts are automatically prevented  
-- Access is controlled using roles (Admin / User)
-
-By the end of the semester, students will have:
-
-- A complete MERN-stack application  
-- A well-structured GitHub repository  
-- Practical experience in building a real-world scheduling system  
-- Confidence in explaining a full-stack project during evaluations  
-
----
-
-## 2. Technologies Used
-
-Through Schedula, students will work with:
-
-- Frontend: React + Material UI / Bootstrap  
-- Backend: Node.js + Express  
-- Database: MongoDB (Cloud – MongoDB Atlas)  
-- Authentication: JWT (JSON Web Tokens)  
-- Version Control: Git & GitHub  
-
-This project reflects **industry-standard full-stack development practices** used in real service-based applications.
+### 1.3 Learning Outcomes
+- JWT authentication and role-based access
+- REST API development
+- MongoDB schema modeling
+- Building scheduling logic
+- React component architecture
+- Full-stack application structuring
+- GitHub workflow usage
 
 ---
 
-## 3. Learning Outcomes
+## 2. System Overview
 
-By completing Schedula, students will be able to:
+### 2.1 User Roles
+- **User:** Books services, manages appointments, views notifications  
+- **Admin:** Manages services, schedules, bookings, and confirmations  
 
-- Design and implement RESTful APIs  
-- Build responsive frontend applications using React  
-- Integrate frontend and backend securely  
-- Design MongoDB schemas using Mongoose  
-- Implement authentication and role-based authorization  
-- Handle real-world scheduling and conflict-management logic  
-- Structure and manage a complete full-stack project  
+### 2.2 Core Features
+- Secure login/register
+- Browse salon services
+- Book appointments with time slots
+- Slot conflict prevention
+- Booking status workflow
+- Notification center
+- Admin dashboard with calendar view
 
 ---
 
-## 4. Week-Wise Project Milestones
+## 3. High-Level Architecture
+[ React Frontend ]
+|
+----- REST API -----
+|
+[ Node.js + Express ]
+|
+[ MongoDB ]
+
+
+---
+
+## 4. Database Design
+
+### 4.1 Collections
+
+#### 4.1.1 users
+```json
+{
+  "name": "string",
+  "email": "string",
+  "password": "string",
+  "phone": "string",
+  "role": "user | admin"
+}
+```
+#### 4.1.2 services
+{
+  "name": "string",
+  "description": "string",
+  "duration": "number",
+  "price": "number",
+  "isActive": "boolean"
+}
+
+#### 4.1.3 bookings
+{
+  "user": "ObjectId",
+  "service": "ObjectId",
+  "date": "string",
+  "startTime": "string",
+  "endTime": "string",
+  "status": "Pending | Confirmed | Completed | Cancelled",
+  "notes": "string"
+}
+
+#### 4.1.4 notifications
+{
+  "user": "ObjectId",
+  "message": "string",
+  "type": "booking | system",
+  "isRead": "boolean"
+}
+
+## 5. Backend Design
+#### 5.1 Tech Stack
+Node.js
+Express.js
+MongoDB + Mongoose
+JWT authentication
+Bcrypt password hashing
+
+#### 5.2 Folder Structure
+backend/
+  controllers/
+  models/
+  routes/
+  middleware/
+  services/
+  utils/
+  app.js
+
+#### 5.3 Authentication Flow
+1. User logs in/registers
+2. JWT token generated
+3. Token verifies protected routes
+4. Admin routes validated by role
+
+#### 5.4 API Endpoints
+Auth APIs
+  POST /auth/register
+  POST /auth/login
+  GET /auth/me
+
+Service APIs
+  POST /services
+  GET /services
+  PUT /services/:id
+  DELETE /services/:id
+Booking APIs
+  POST /bookings
+  GET /bookings/my
+  GET /bookings/admin
+  PUT /bookings/status/:id
+  DELETE /bookings/:id
+
+Notification APIs
+  GET /notifications
+  PUT /notifications/read/:id
+
+#### 5.5 Role-Based Access Control
+JWT verification
+Admin-only routes protected
+Users restricted to their own bookings
+
+## 6. Frontend Design (React)
+
+### 6.1 Tech Stack
+- React  
+- React Router  
+- Axios  
+- Context API / Redux  
+- TailwindCSS / Material UI  
+
+### 6.2 Folder Structure
+src/  
+  components/  
+  pages/  
+  context/  
+  hooks/  
+  services/  
+  App.jsx  
+
+### 6.3 Key Pages
+- Login/Register  
+- Home (Services List)  
+- Booking Page  
+- My Bookings  
+- Notification Center  
+- Admin Dashboard  
+- Manage Services  
+- Manage Bookings  
+- Calendar View  
+
+## 7. Security Considerations
+- JWT-based authentication  
+- Password hashing (bcrypt)  
+- Protected routes  
+- Input validation  
+- Booking slot conflict prevention  
+
+## 8. Development Workflow
+- Use meaningful commit messages  
+- Test APIs in Postman  
+- Integrate frontend after backend testing  
+- Push code regularly  
+- Maintain clean folder structure  
+
+## 9. Future Enhancements
+- Email/SMS alerts  
+- Online payments  
+- Stylist-wise booking  
+- Multi-branch support  
+- Customer loyalty system  
+
+## 10. Week-wise Project Plan
 
 ### Weeks 1–3: Foundation
-• Understanding full-stack architecture  
-• Introduction to MERN stack  
-• Understanding salon booking workflows  
-• Defining project requirements and user roles  
-
-**Deliverable:**  
-System architecture diagram and project requirement analysis  
-
----
+- MERN basics  
+- Understanding salon booking flow  
+**Deliverable:** Architecture diagram  
 
 ### Weeks 4–6: Backend Development
-• Node.js fundamentals  
-• Express server setup  
-• REST API design and implementation  
-• Service and booking API development  
-
-**Deliverable:**  
-Basic backend APIs for services and bookings  
-
----
+- Node.js + Express  
+- CRUD APIs  
+**Deliverable:** Basic backend  
 
 ### Weeks 7–9: Database Integration
-• MongoDB concepts  
-• CRUD operations  
-• Mongoose schema design  
-• Connecting backend with MongoDB Atlas  
-
-**Deliverable:**  
-MongoDB collections with full CRUD functionality  
-
----
+- MongoDB setup  
+- Mongoose schemas  
+**Deliverable:** Collections with CRUD  
 
 ### Weeks 10–11: Authentication & Security
-• JWT-based authentication  
-• Role-based access control (Admin / User)  
-• Securing APIs using middleware  
-
-**Deliverable:**  
-Secured login and role-based access flow demonstration  
-
----
+- JWT authentication  
+- Role-based access  
+**Deliverable:** Secured login  
 
 ### Weeks 12–14: Frontend Development
-• React components development  
-• Routing and forms  
-• Calendar and booking UI  
-• API integration with backend  
-
-**Deliverable:**  
-Functional frontend screens for user and admin  
-
----
+- React pages  
+- API integration  
+**Deliverable:** Complete UI  
 
 ### Week 15: Final Integration & Demo
-• Full-stack integration  
-• Slot conflict testing  
-• Error handling and debugging  
-• Final testing and optimization  
+- Testing & deployment  
+**Deliverable:** Fully working app  
 
-**Deliverable:**  
-Working full-stack salon booking application demo  
+## 11. GitHub Repository Guidelines
+- One repository for the entire project  
+- Folder structure:  
+root/  
+  frontend/  
+  backend/  
+- Push code regularly  
+- Avoid committing .env  
+- Ensure repo is accessible  
 
----
+## 12. Conclusion
+Schedula is a complete full-stack appointment booking system designed to handle real-world salon scheduling. It integrates authentication, service management, booking logic, slot conflict prevention, and a modern frontend to deliver a smooth user and admin experience.
