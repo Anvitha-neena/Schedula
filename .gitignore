@@ -1,0 +1,20 @@
+# Node dependency lock file
+package-lock.json
+package.json
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# # Build output (optional)
+# dist/
+# build/
+
+# # VS Code settings (optional)
+# .vscode/
