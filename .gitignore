@@ -1,7 +1,6 @@
 # Node dependency lock file
 package-lock.json
-package.json
-
+.env
 # Node modules
 node_modules/
 
