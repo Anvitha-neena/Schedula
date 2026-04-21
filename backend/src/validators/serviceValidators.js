@@ -2,6 +2,7 @@ const { body } = require("express-validator");
 
 exports.serviceValidation = [
   body("name").notEmpty().withMessage("Service name is required"),
+  body("category").notEmpty().withMessage("Category is required"),
   body("duration")
     .isInt({ min: 10 })
     .withMessage("Duration must be at least 10 mins"),

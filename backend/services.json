@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Haircut",
+    "category": "Hair",
+    "duration": 30,
+    "price": 199
+  },
+  {
+    "name": "Facial",
+    "category": "Skin",
+    "duration": 20,
+    "price": 499
+  }
+]
